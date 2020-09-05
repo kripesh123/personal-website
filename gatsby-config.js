@@ -7,7 +7,7 @@
 module.exports = {
     /* Your site config here */
     siteMetadata: {
-        title: "Full Stack Developer",
+        title: "Full Stack Developer | Kripesh Bista",
         description: "This is Full Stack Developer Portfolio Site",
         author: "@bista_kripesh",
         twitterUsername: "@bista_kripesh",
