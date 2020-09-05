@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 const query = graphql`
   {
-    allContentfulJob(sort: { fields: id, order: DESC }) {
+    allContentfulJob(sort: { fields: id, order: ASC }) {
       nodes {
         id
         company
