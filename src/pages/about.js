@@ -4,9 +4,12 @@ import { graphql } from "gatsby"
 import Title from "../components/Title"
 import Image from "gatsby-image"
 import SEO from "../components/SEO"
-const About = ({
-    data: { about },
-}) => {
+import Jobs from "../components/Jobs"
+const About = ({ data }) => {
+    const {
+        about,
+        allContentfulJob: {nodes: jobs}
+    } = data
     const { childContentfulAboutInfoTextNode, stack, title, image } = about
 
     return (
@@ -26,6 +29,7 @@ const About = ({
                     </article>
                 </div>
             </section>
+            <Jobs jobs={jobs} title="more info"></Jobs>
         </Layout>
     )
 }
@@ -45,8 +49,21 @@ export const query = graphql`
             fluid {
                 ...GatsbyContentfulFluid
             }
+        }
+    }   
+
+    allContentfulJob(sort: { fields: company}, limit: 3, skip: 1) {
+        nodes {
+          id
+          company
+          date
+          position
+          description {
+            id
+            name
           }
-        }   
+        }
+    }
   }
 `
 

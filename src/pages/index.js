@@ -13,6 +13,7 @@ export default ({ data }) => {
   const {
     allContentfulProject: { nodes: projects },
     allContentfulBlog: { nodes: blogs },
+    allContentfulJob: { nodes: jobs }
   } = data
 
   return (
@@ -20,7 +21,7 @@ export default ({ data }) => {
       <SEO title="Home" description="this is our home page" />
       <Hero />
       <Services />
-      <Jobs />
+      <Jobs jobs={jobs} title="experience" showLink/>
       <Projects projects={projects} title="featured projects" showLink />
       <Blogs blogs={blogs} title="latest articles" showLink />
       <Newsletters />
@@ -62,6 +63,19 @@ export const query = graphql`
             fluid {
               ...GatsbyContentfulFluid
             }
+        }
+      }
+    }
+    
+    allContentfulJob(sort: { fields: company }, limit: 3) {
+      nodes {
+        id
+        company
+        date
+        position
+        description {
+          id
+          name
         }
       }
     }

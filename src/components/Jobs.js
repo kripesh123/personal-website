@@ -1,37 +1,15 @@
 import React from "react"
 import Title from "./Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
-import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 
-const query = graphql`
-  {
-    allContentfulJob {
-      nodes {
-        id
-        company
-        date
-        position
-        description {
-          id
-          name
-        }
-      }
-    }
-  }
-`
-
-const Jobs = () => {
-  const data = useStaticQuery(query)
-  const {
-    allContentfulJob: { nodes: jobs },
-  } = data
+const Jobs = ({ jobs, title, showLink }) => {
   const [value, setValue] = React.useState(0)
   const { company, position, date, description } = jobs[value]
 
   return (
     <section className="section jobs">
-      <Title title="expierence" />
+      <Title title={title} />
       <div className="jobs-center">
         {/* btn container */}
         <div className="btn-container">
@@ -62,9 +40,11 @@ const Jobs = () => {
           })}
         </article>
       </div>
-      <Link to="/about" className="btn center-btn">
-        more info
-      </Link>
+      {showLink && (
+        <Link to="/about" className="btn center-btn">
+          more info
+        </Link>
+      )}
     </section>
   )
 }
