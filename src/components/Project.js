@@ -18,10 +18,10 @@ const Project = ({ description: {description}, title, github, stack, url, image,
           })}
         </div>
         <div className="project-links">
-          <a href={github} target="_blank" rel="noreferrer">
+          <a href={github} target="_blank" rel="noopener noreferrer">
             <FaGithubSquare className="project-icon" />
           </a>
-          <a href={url} target="_blank" rel="noreferrer">
+          <a href={url} target="_blank" rel="noopener noreferrer">
             <FaShareSquare className="project-icon" />
           </a>
         </div>
