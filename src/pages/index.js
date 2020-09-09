@@ -18,7 +18,7 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" description="this is our home page" />
+      <SEO title="Kripesh Bista" description="A highly experienced and self-motivated Full Stack Software Developer with a demonstrated history of working in the computer software industry. Skilled in Java, Spring Boot, Javascript, Typescript, Nodejs, Angular, React, Redux." />
       <Hero />
       <Services />
       <Jobs jobs={jobs} title="experience" showLink/>
