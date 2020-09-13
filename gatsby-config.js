@@ -7,12 +7,12 @@
 module.exports = {
     /* Your site config here */
     siteMetadata: {
-        title: "Full Stack Developer | Kripesh Bista",
-        description: "This is Full Stack Developer Portfolio Site",
+        title: "Full Stack Software Developer | Kripesh Bista",
+        description: "Kripesh Bista, Full Stack Software Developer Portfolio Site",
         author: "@bista_kripesh",
         twitterUsername: "@bista_kripesh",
         image: "/twitter-img.png",
-        siteUrl: "https://kripeshbista.com.np",
+        siteUrl: "https://kripeshbista.com",
     },
     plugins: [
         `gatsby-transformer-sharp`,

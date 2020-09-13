@@ -14,7 +14,7 @@ const About = ({ data }) => {
 
     return (
         <Layout>
-            <SEO title="About Me" description="about webdev" />
+            <SEO title="About Me" description="In-depth knowledge of software design and software development life cycles.(Agile) Comprehensive knowledge of Java 8, Spring Boot and Javascript/Typescript, Nodejs, Angular, React Web Development and Software Development." />
             <section className="about-page">
                 <div className="section-center about-center">
                     <Image fluid={image.fluid} className="about-img" />
