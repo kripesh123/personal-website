@@ -29,22 +29,27 @@ module.exports = {
         {
             resolve: `gatsby-source-contentful`,
             options: {
-              spaceId: process.env.CONTENTFUL_SPACE_ID,
-              // Learn about environment variables: https://gatsby.dev/env-vars
-              accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+                spaceId: process.env.CONTENTFUL_SPACE_ID,
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
             },
-          },
+        },
         {
             resolve: `gatsby-plugin-prefetch-google-fonts`,
             options: {
                 fonts: [{
-                        family: `Roboto`,
-                        variants: [`400`, `700`],
-                    },
-                    {
-                        family: `Open Sans`,
-                    },
+                    family: `Roboto`,
+                    variants: [`400`, `700`],
+                },
+                {
+                    family: `Open Sans`,
+                },
                 ],
+            },
+        },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: process.env.UA,
             },
         },
     ],
