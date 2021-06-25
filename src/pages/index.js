@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 import Hero from "../components/Hero"
 import Services from "../components/Services"
 import Projects from "../components/Projects"
@@ -9,7 +9,7 @@ import Blogs from "../components/Blogs"
 import Jobs from "../components/Jobs"
 import Newsletters from "../components/Newsletters"
 
-export default ({ data }) => {
+const App = ({ data }) => {
   const {
     allContentfulProject: { nodes: projects },
     allContentfulBlog: { nodes: blogs },
@@ -18,67 +18,70 @@ export default ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Kripesh Bista" description="A highly experienced and self-motivated Full Stack Software Developer with a demonstrated history of working in the computer software industry. Skilled in Java, Spring Boot, Javascript, Typescript, Nodejs, Angular, React, Redux." />
+      <Seo title="Kripesh Bista" description="A highly experienced and self-motivated Full Stack Software Developer with a demonstrated history of working in the computer software industry. Skilled in Java, Spring Boot, Javascript, Typescript, Nodejs, Angular, React, Redux." />
       <Hero />
       <Services />
       <Jobs jobs={jobs} title="experience" showLink/>
       <Projects projects={projects} title="featured projects" showLink />
-      <Blogs blogs={blogs} title="latest articles" showLink />
+      <Blogs blogs={blogs} title="latest blogs" showLink />
       <Newsletters />
     </Layout>
   )
 }
 
 export const query = graphql`
-  {
-    allContentfulProject(filter: { featured: { eq: true } }) {
-      nodes {
-        github
+{
+  allContentfulJob(sort: { fields: company }, limit: 3) {
+    nodes {
+      id
+      company
+      date
+      position
+      description {
         id
-        description {
-          description
-        }
-        title
-        url
-        image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-        }
-        stack {
-          id
-          title
-        }
-      }
-    }
-    allContentfulBlog(sort: { fields: date, order: DESC }, limit: 3) {
-      nodes {
-        slug
-        description
-        date(formatString: "MMMM Do, YYYY")
-        id
-        title
-        category
-        image {
-            fluid {
-              ...GatsbyContentfulFluid
-            }
-        }
-      }
-    }
-    
-    allContentfulJob(sort: { fields: company }, limit: 3) {
-      nodes {
-        id
-        company
-        date
-        position
-        description {
-          id
-          name
-        }
+        name
       }
     }
   }
+  allContentfulProject(filter: { featured: { eq: true } }) {
+    nodes {
+      github
+      id
+      description {
+        description
+      }
+      title
+      url
+      stack {
+        id
+        title
+      }
+      image {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+          layout: CONSTRAINED
+        )
+      }
+    }
+  }
+  allContentfulBlog(sort: { fields: date, order: DESC }, limit: 3) {
+    nodes {
+      slug
+      description
+      date(formatString: "MMMM Do, YYYY")
+      id
+      title
+      category
+      image {
+        gatsbyImageData(
+          placeholder: BLURRED
+          formats: [AUTO, WEBP]
+          layout: CONSTRAINED
+        )
+      }
+    }
+  }
+}
 `
-
+export default App

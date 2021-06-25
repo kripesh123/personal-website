@@ -2,8 +2,8 @@ import React from "react"
 import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Title from "../components/Title"
-import Image from "gatsby-image"
-import SEO from "../components/SEO"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Seo from "../components/SEO"
 import Jobs from "../components/Jobs"
 const About = ({ data }) => {
     const {
@@ -11,13 +11,13 @@ const About = ({ data }) => {
         allContentfulJob: {nodes: jobs}
     } = data
     const { childContentfulAboutInfoTextNode, stack, title, image } = about
-
+    const img = getImage(image)
     return (
         <Layout>
-            <SEO title="About Me" description="In-depth knowledge of software design and software development life cycles.(Agile) Comprehensive knowledge of Java 8, Spring Boot and Javascript/Typescript, Nodejs, Angular, React Web Development and Software Development." />
+            <Seo title="About Me" description="In-depth knowledge of software design and software development life cycles.(Agile) Comprehensive knowledge of Java 8, Spring Boot and Javascript/Typescript, Nodejs, Angular, React Web Development and Software Development." />
             <section className="about-page">
                 <div className="section-center about-center">
-                    <Image fluid={image.fluid} className="about-img" />
+                <GatsbyImage image={img} alt={title} className="about-img" />
                     <article className="about-text">
                         <Title title={title} />
                         <p>{childContentfulAboutInfoTextNode.info}</p>
@@ -45,10 +45,12 @@ export const query = graphql`
         childContentfulAboutInfoTextNode{
         info
         }
-        image{
-            fluid {
-                ...GatsbyContentfulFluid
-            }
+        image {
+            gatsbyImageData(
+              placeholder: BLURRED
+              formats: [AUTO, WEBP]
+              layout: CONSTRAINED
+            )
         }
     }   
 

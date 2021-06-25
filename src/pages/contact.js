@@ -1,6 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout"
-import SEO from "../components/SEO"
+import Seo from "../components/SEO"
 
 export default class contact extends React.Component {
     constructor(props) {
@@ -15,7 +15,7 @@ export default class contact extends React.Component {
         const { status } = this.state
         return (
             <Layout>
-                <SEO title="Contact" />
+                <Seo title="Contact" />
                 <section className="contact-page">
                     <article className="contact-form">
                         <h3>get in touch</h3>

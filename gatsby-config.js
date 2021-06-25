@@ -15,6 +15,7 @@ module.exports = {
         siteUrl: "https://kripeshbista.com",
     },
     plugins: [
+        `gatsby-plugin-image`,
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
