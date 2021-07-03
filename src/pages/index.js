@@ -8,6 +8,7 @@ import Projects from "../components/Projects"
 import Blogs from "../components/Blogs"
 import Jobs from "../components/Jobs"
 import Newsletters from "../components/Newsletters"
+import Countries from "../components/Countries"
 
 const App = ({ data }) => {
   const {
@@ -21,9 +22,10 @@ const App = ({ data }) => {
       <Seo title="Kripesh Bista" description="A highly experienced and self-motivated Full Stack Software Developer with a demonstrated history of working in the computer software industry. Skilled in Java, Spring Boot, Javascript, Typescript, Nodejs, Angular, React, Redux." />
       <Hero />
       <Services />
-      <Jobs jobs={jobs} title="experience" showLink/>
+      <Jobs jobs={jobs} title="experiences" showLink/>
       <Projects projects={projects} title="featured projects" showLink />
       <Blogs blogs={blogs} title="latest blogs" showLink />
+      <Countries />
       <Newsletters />
     </Layout>
   )

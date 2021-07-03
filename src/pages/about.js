@@ -5,6 +5,7 @@ import Title from "../components/Title"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Seo from "../components/SEO"
 import Jobs from "../components/Jobs"
+import Countries from "../components/Countries"
 const About = ({ data }) => {
     const {
         about,
@@ -29,7 +30,8 @@ const About = ({ data }) => {
                     </article>
                 </div>
             </section>
-            <Jobs jobs={jobs} title="more info"></Jobs>
+            <Jobs jobs={jobs} title="more experiences"></Jobs>
+            <Countries />
         </Layout>
     )
 }

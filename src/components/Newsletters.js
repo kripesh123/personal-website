@@ -13,7 +13,7 @@ export default class Newsletters extends React.Component {
     render() {
         const { status } = this.state
         return (
-            <section className="newsletters-page bg-grey">
+            <section className="newsletters-page">
                 <Title title="Newsletters" />
                 {/* <div className="newsletters-page"> */}
                     <article className="newsletters-form">
