@@ -54,7 +54,7 @@ const ComponentName = ({ data }) => {
                     <article className="blog-content">
                         {renderRichText(content, options)}
                     </article>
-                    <Link to="/blog" className="btn center-btn">
+                    <Link to="/blogs" className="btn center-btn">
                         blog
           </Link>
                 </div>
