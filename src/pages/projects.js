@@ -20,7 +20,7 @@ const ProjectsPage = ({
 }
 export const query = graphql`
 {
-  projects: allContentfulProject {
+  projects: allContentfulProject(sort: { fields: updatedAt, order: DESC }) {
       nodes {
         url
         title

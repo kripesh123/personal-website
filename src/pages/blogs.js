@@ -21,7 +21,7 @@ const Blog = ({
 
 export const query = graphql`
 {
-  blogs: allContentfulBlog {
+  blogs: allContentfulBlog(sort: { fields: date, order: DESC }) {
     nodes {
       category
       slug
