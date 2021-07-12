@@ -13,7 +13,7 @@ const Hero = () => {
             <h1>i'm Kripesh</h1>
             <h4>freelance web and software Developer.</h4>
             <h4>Now streaming toward Data & it's science affilitation.
-            <br> Some call it Just Data Science.</h4>
+            <br> Some call it Just Data Science.</br></h4>
             <Link to="/contact" className="btn">
               reach out
             </Link>
