@@ -67,7 +67,7 @@ export const query = graphql`
       }
     }
   }
-  allContentfulBlog(sort: { fields: date, order: DESC }, limit: 3) {
+  allContentfulBlog(sort: { fields: date, order: DESC }, limit: 6) {
     nodes {
       slug
       description
