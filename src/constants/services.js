@@ -15,8 +15,8 @@ const Services = [{
     {
         id: 3,
         icon: < FaAndroid className = "service-icon" / > ,
-        title: "app development",
-        text: `Design or Develop beautiful UI/UX. Native or X-platform based application development on project requirements. Mobile Application Development.`,
+        title: "data science consultant",
+        text: `I help clients for knowing varying ascepts of data and modern technology through data science.`,
     },
 ]
 export default Services
