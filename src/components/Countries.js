@@ -8,13 +8,13 @@ const Countries = () => {
       <Title title="visited countries" />
       <div className="section-center countries-center">
         {countries.map(country => {
-          const { id, icon, title, text } = country
+          const { id, icon, title } = country
           return (
             <article key={id} className="country">
               {icon}
               <h4>{title}</h4>
               <div className="underline"></div>
-              <p>{text}</p>
+              <p>...</p>
             </article>
           )
         })}
