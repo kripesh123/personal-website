@@ -56,7 +56,7 @@ export const query = graphql`
         }
     }   
 
-    allContentfulJob(sort: { fields: company}, limit: 3, skip: 1) {
+    allContentfulJob(sort: { fields: index}, limit: 3, skip: 2) {
         nodes {
           id
           company

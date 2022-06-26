@@ -33,7 +33,7 @@ const App = ({ data }) => {
 
 export const query = graphql`
 {
-  allContentfulJob(sort: { fields: company }, limit: 3) {
+  allContentfulJob(sort: { fields: index }, limit: 3) {
     nodes {
       id
       company
