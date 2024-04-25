@@ -681,6 +681,14 @@ Jobs
     box-shadow: -2px 0 var(--clr-primary-5);
   }
 }
+@media screen and (max-width: 666px) {
+  .about-page .job-btn {
+    font-size: 0.33rem;
+    letter-spacing: 0.2rem;
+    margin: 0 0.3rem;
+    line-height: 2;
+  }
+}
 
 /*
 =============== 

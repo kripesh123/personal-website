@@ -30,7 +30,7 @@ const About = ({ data }) => {
                     </article>
                 </div>
             </section>
-            <Jobs jobs={jobs} title="more experiences"></Jobs>
+            <Jobs jobs={jobs} title="more experiences" style="about-page"></Jobs>
             <Countries />
         </Layout>
     )
@@ -56,7 +56,7 @@ export const query = graphql`
         }
     }   
 
-    allContentfulJob(sort: { fields: index}, limit: 3, skip: 2) {
+    allContentfulJob(sort: { fields: index}, limit: 5) {
         nodes {
           id
           company

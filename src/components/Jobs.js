@@ -3,12 +3,13 @@ import Title from "./Title"
 import { FaAngleDoubleRight } from "react-icons/fa"
 import { Link } from "gatsby"
 
-const Jobs = ({ jobs, title, showLink }) => {
+const Jobs = ({ jobs, title, showLink, style='' }) => {
   const [value, setValue] = React.useState(0)
   const { company, position, date, description } = jobs[value]
+  const styleName = `section jobs ${style}`
 
   return (
-    <section className="section jobs">
+    <section className={styleName}>
       <Title title={title} />
       <div className="jobs-center">
         {/* btn container */}
