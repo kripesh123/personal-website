@@ -464,7 +464,9 @@ Hero
   .hero-img {
     display: block;
     grid-row: 1/1;
-    grid-column: 6/-1;
+    grid-column: 10/-1;
+    width: 350px; /* Set the width to 100 pixels */
+    height: auto; /* Automatically adjust the height while maintaining aspect ratio */
   }
 }
 @media screen and (min-width: 1170px) {
